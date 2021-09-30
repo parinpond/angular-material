@@ -1,5 +1,6 @@
 import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { ProductService } from '../api/product.service';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -13,7 +14,6 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getProduct().subscribe((data:{})=>{
       console.log(data);
-    })
-  }
+  })}
 
 }
