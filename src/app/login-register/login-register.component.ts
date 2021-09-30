@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-var _ = require('lodash');
 @Component({
   selector: 'app-login-register',
   templateUrl: './login-register.component.html',
@@ -15,7 +14,7 @@ export class LoginRegisterComponent implements OnInit {
   ngOnInit(): void {
   }
   checkLogin(){
-    if(!_.isEmpty(this.userData.username)&&!_.isEmpty(this.userData.password)){
+    if(this.userData.username && this.userData.password){
 
     }
   }
