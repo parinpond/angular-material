@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-var _ = require('lodash');
+import { Router} from '@angular/router';
 @Component({
   selector: 'app-login-register',
   templateUrl: './login-register.component.html',
@@ -10,13 +10,13 @@ export class LoginRegisterComponent implements OnInit {
     username:'',
     password:''
   }
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit(): void {
   }
   checkLogin(){
-    if(!_.isEmpty(this.userData.username)&&!_.isEmpty(this.userData.password)){
-
+    if(this.userData.username && this.userData.password){
+      this.router.navigate(['dashboard']);
     }
   }
 }
