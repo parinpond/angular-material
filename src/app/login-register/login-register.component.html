@@ -5,15 +5,15 @@
     <mat-card-content>
         <mat-form-field>
             <mat-label>Username/Email</mat-label>
-            <input matInput name="username" ngModel #username />
+            <input [(ngModel)]="userData.username" matInput name="username" ngModel #username />
             <mat-icon matSuffix>email</mat-icon>
         </mat-form-field>
         <mat-form-field>
             <mat-label>Password</mat-label>
-            <input matInput name="password" ngModel #password />
+            <input [(ngModel)]="userData.password" matInput name="password" ngModel #password />
             <mat-icon matSuffix>lock</mat-icon>
         </mat-form-field>
-    <button mat-flat-button color="primary">
+    <button mat-flat-button color="primary" (click)="checkLogin()">
         <mat-icon>check</mat-icon>
         Login
     </button>
