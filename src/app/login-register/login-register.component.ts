@@ -16,11 +16,7 @@ export class LoginRegisterComponent implements OnInit {
   }
   checkLogin(){
     if(this.userData.username && this.userData.password){
-<<<<<<< HEAD
-
-=======
       this.router.navigate(['dashboard']);
->>>>>>> 2033104f64733729b8d605720943784f8a5884f4
     }
   }
 }

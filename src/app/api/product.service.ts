@@ -6,7 +6,7 @@ import { ProductModel } from './ProductModel';
   providedIn: 'root'
 })
 export class ProductService {
-  apiUrl="http://localhost/api";
+  apiUrl="https://jsonplaceholder.typicode.com/photos?albumId=1";
   constructor(private http:HttpClient) { }
   httpOptions={
     headers: new HttpHeaders({
@@ -14,6 +14,6 @@ export class ProductService {
     })
   }
   getProduct():Observable<ProductModel>{
-     return this.http.get<ProductModel>(this.apiUrl+'/product.php');
+     return this.http.get<ProductModel>(this.apiUrl);
   }
 }

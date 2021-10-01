@@ -1,5 +1,7 @@
 export class ProductModel{
-   id:number;
-   name:string;
-   price:number;
+   albumId:string="";
+   id:string="";
+   title:string="";
+   url:string="";
+   thumbnailUrl:string="";
 }
