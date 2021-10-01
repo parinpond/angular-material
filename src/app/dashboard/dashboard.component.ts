@@ -9,11 +9,13 @@ import { ProductService } from '../api/product.service';
 })
 export class DashboardComponent implements OnInit {
 
+  products: any = {};
   constructor(public productService:ProductService) { }
 
   ngOnInit(): void {
     this.productService.getProduct().subscribe((data:{})=>{
       console.log(data);
+      this.products =data;
   })}
 
 }
