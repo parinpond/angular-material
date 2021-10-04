@@ -7,6 +7,7 @@ import { ProductModel } from './ProductModel';
 })
 export class ProductService {
   apiUrl="https://jsonplaceholder.typicode.com/photos?albumId=1";
+  apiLocalhost ="http://localhost:3000/";
   constructor(private http:HttpClient) { }
   httpOptions={
     headers: new HttpHeaders({
@@ -15,5 +16,10 @@ export class ProductService {
   }
   getProduct():Observable<ProductModel>{
      return this.http.get<ProductModel>(this.apiUrl);
+  }
+  save(product:any):Observable<ProductModel>{
+    return this.http.post<ProductModel>(this.apiLocalhost+"post",product,{
+      headers:{'content-type':'application/x-www-form-urlencoded'}
+    })
   }
 }
