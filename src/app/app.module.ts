@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA  } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DialogProductComponent } from './dialog-product/dialog-product.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import {MatDialogModule} from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +42,7 @@ import { MatDialogModule } from '@angular/material/dialog';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents:[DialogProductComponent]
+  entryComponents:[DialogProductComponent],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }
