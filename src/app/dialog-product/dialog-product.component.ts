@@ -10,13 +10,14 @@ export class DialogProductComponent implements OnInit {
     name:'',
     price:''
   }
+  product_name:string="";
   constructor(public productService:ProductService) { }
 
   ngOnInit(): void {
   }
   save(){
-    this.productService.save(this.product).subscribe(res=>{
-      console.log(res);
-    })
-  }
+    this.productService.save(this.product).subscribe((data)=>{
+      console.log(data);
+  })
+}
 }
