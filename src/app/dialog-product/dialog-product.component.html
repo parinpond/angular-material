@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Product</h2>
+<mat-dialog-content class="mat-typography">
+    <mat-form-field appearance="fill">
+        <mat-label>Product name</mat-label>
+        <input matInput [(ngModel)]="product.name">
+      </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-flat-button color="primary" (click)="save()">
+    <mat-icon>check</mat-icon>
+    Save
+    </button>
+</mat-dialog-actions>
+
