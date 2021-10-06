@@ -12,14 +12,15 @@ export class DashboardComponent implements OnInit {
 
   products: any = {};
   constructor(public productService:ProductService,public dialog:MatDialog) { }
-  openDialog(){
-    this.dialog.open(DialogProductComponent,{
-      width:'958px'
-    })
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogProductComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
   ngOnInit(): void {
-    this.productService.getProduct().subscribe((data:{})=>{
-      console.log(data);
+    this.productService.getProduct().subscribe((data)=>{
       this.products =data;
   })}
 
