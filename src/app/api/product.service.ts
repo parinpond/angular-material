@@ -18,8 +18,8 @@ export class ProductService {
      return this.http.get<ProductModel>(this.apiUrl);
   }
   save(product:any):Observable<ProductModel>{
-    return this.http.post<ProductModel>(this.apiLocalhost+"post",product,{
-      headers:{'content-type':'application/x-www-form-urlencoded'}
-    })
+    const headers = { 'content-type': 'application/json'}  
+    const body=JSON.stringify(product);
+    return this.http.post<ProductModel>(this.apiLocalhost, body,{'headers':headers});
   }
 }
